@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package auth;
+
+service ItemService {
+    rpc create (CreateRequest) returns (CreateResponse) {}
+    rpc update (UpdateRequest) returns (UpdateResponse) {}
+    rpc findAll (FindAllRequest) returns (FindAllResponse) {}
+    rpc findByIdPublic (FindByIdPublicRequest) returns (FindByIdPublicResponse) {}
+    rpc delete (DeleteRequest) returns (DeleteResponse) {}
+}
+
+/* Item */
+message Item {
+    string item_name = 2;
+    string company_id = 3;
+    string company_name = 4;
+    string[] attributes_array = 5;
+}
+
+message ItemWithID {
+    string _id = 1;
+    Item item = 2;
+}
+
+/* Create */
+message CreateRequest {
+    Item item = 1;
+
+}
+
+message CreateResponse {
+    ItemWithID item = 1;
+}
+
+/* Update */
+message UpdateRequest {
+    ItemWithID item = 1;
+}
+
+message UpdateResponse {
+    ItemWithID item = 1;
+}
+
+/* FindAll */
+message FindAllRequest {
+
+}
+
+message FindAllResponse {
+    repeated ItemWithID items = 1;
+}
+
+/* FindByIdPublic */
+message FindByIdPublicRequest {
+    ItemWithID item = 1;
+}
+
+message FindByIdPublicResponse {
+    ItemWithID item = 1;
+}
+
+/* Delete */
+message DeleteRequest {
+    ItemWithID item = 1;
+}
+
+message DeleteResponse {
+    ItemWithID item = 1;
+}
