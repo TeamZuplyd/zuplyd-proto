@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package auth;
+
+import "google/protobuf/empty.proto";
+
+service AuthService {
+    rpc Register (RegisterRequest) returns (RegisterResponse) {}
+    rpc Login (LoginRequest) returns (LoginResponse) {}
+    rpc findAll (google.protobuf.Empty) returns (UserList) {}
+    rpc findByUsername (UserRequest) returns (User) {}
+}
+
+/* Register */
+message RegisterRequest {
+    string username = 1;
+    string password = 2;
+    string role = 3;
+}
+
+message RegisterResponse {
+    string _id = 1;
+    string username = 2;
+    string password = 3;
+    string role = 4;
+}
+
+/* Login */
+message LoginRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message LoginResponse {
+    string access_token = 1;
+}
+
+/* Find All */
+message User {
+    string _id = 1;
+    string username = 2;
+    string password = 3;
+    string role = 4;
+    int32 __v = 5;
+}
+
+message UserList {
+    repeated User users = 1;
+}
+
+message UserRequest {
+    string username = 1;
+}
