@@ -26,7 +26,6 @@ message ItemWithID {
 /* Create */
 message CreateRequest {
     Item item = 1;
-
 }
 
 message CreateResponse {
