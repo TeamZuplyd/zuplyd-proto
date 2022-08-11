@@ -33,14 +33,10 @@ message regResUser {
     string company_id = 5;
 }
 
-message regResError {
-    string error = 1;
-}
-
 message RegisterResponse {
     oneof regRes {
         regResUser user = 1;
-        regResError error = 2;
+        string error = 2;
     }
 }
 
