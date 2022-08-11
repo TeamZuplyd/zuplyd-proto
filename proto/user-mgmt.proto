@@ -11,26 +11,26 @@ service UserMgmtService {
 }
 
 message UserDto {
-    string email = 1
-    string role = 1
-    string company_name = 1
-    string company_id = 1
+    string email = 1;
+    string role = 1;
+    string company_name = 1;
+    string company_id = 1;
 }
 
 /* Register */
 message RegisterRequest {
-    UserDto user = 1
+    UserDto user = 1;
 }
 
 message RegisterResponse {
     string _id = 1;
-    UserDto user = 2
+    UserDto user = 2;
 }
 
 /* Find All */
 message User {
     string _id = 1;
-    UserDto user = 2
+    UserDto user = 2;
     int32 __v = 3;
 }
 
