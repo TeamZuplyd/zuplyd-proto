@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package userMgmt;
+package user-mgmt;
 
 import "google/protobuf/empty.proto";
 
