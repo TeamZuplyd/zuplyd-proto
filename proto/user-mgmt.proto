@@ -19,19 +19,28 @@ message UserDto {
 
 /* Register */
 message RegisterRequest {
-    UserDto user = 1;
+    string email = 1;
+    string role = 2;
+    string company_name = 3;
+    string company_id = 4;
 }
 
 message RegisterResponse {
     string _id = 1;
-    UserDto user = 2;
+    string email = 2;
+    string role = 3;
+    string company_name = 4;
+    string company_id = 5;
 }
 
 /* Find All */
 message User {
     string _id = 1;
-    UserDto user = 2;
-    int32 __v = 3;
+    string email = 2;
+    string role = 3;
+    string company_name = 4;
+    string company_id = 5;
+    int32 __v = 6;
 }
 
 message UserList {
