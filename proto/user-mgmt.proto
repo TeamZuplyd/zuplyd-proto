@@ -25,12 +25,23 @@ message RegisterRequest {
     string company_id = 4;
 }
 
-message RegisterResponse {
+message regResUser {
     string _id = 1;
     string email = 2;
     string role = 3;
     string company_name = 4;
     string company_id = 5;
+}
+
+message regResError {
+    string error = 1;
+}
+
+message RegisterResponse {
+    oneof regRes {
+        regResUser user = 1;
+        regResError error = 2;
+    }
 }
 
 /* Find All */
