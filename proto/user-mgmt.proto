@@ -8,6 +8,7 @@ service UserMgmtService {
     rpc Register (RegisterRequest) returns (RegisterResponse) {}
     rpc findAll (google.protobuf.Empty) returns (UserList) {}
     rpc findByUsername (UserRequest) returns (User) {}
+    rpc delete (UserRequest) returns (RegisterResponse) {}
 }
 
 message UserDto {
