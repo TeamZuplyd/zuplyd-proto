@@ -12,13 +12,6 @@ service UserMgmtService {
     rpc update (User) returns (RegisterResponse) {}
 }
 
-message UserDto {
-    string email = 1;
-    string role = 2;
-    string company_name = 3;
-    string company_id = 4;
-}
-
 /* Register */
 message RegisterRequest {
     string email = 1;
