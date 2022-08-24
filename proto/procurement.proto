@@ -16,11 +16,12 @@ message Item {
     string category_name = 2;
     string brand_name = 3;
     int32 min_release_quantity = 4;
-    string output_rule = 5;
-    string output_rule_unit = 6;
-    string company_id = 7;
-    string company_name = 8;
-    repeated string attributes_array = 9;
+    string min_release_quantity = 5;
+    string output_rule = 6;
+    string output_rule_unit = 7;
+    string company_id = 8;
+    string company_name = 9;
+    repeated string attributes_array = 10;
 }
 
 message ItemWithID {
@@ -29,11 +30,12 @@ message ItemWithID {
     string category_name = 3;
     string brand_name = 4;
     int32 min_release_quantity = 5;
-    string output_rule = 6;
-    string output_rule_unit = 7;
-    string company_id = 8;
-    string company_name = 9;
-    repeated string attributes_array = 10;
+    string min_release_quantity = 6;
+    string output_rule = 7;
+    string output_rule_unit = 8;
+    string company_id = 9;
+    string company_name = 10;
+    repeated string attributes_array = 11;
     int32 __v = 11;
 }
 
