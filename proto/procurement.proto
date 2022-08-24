@@ -36,7 +36,7 @@ message ItemWithID {
     string company_id = 9;
     string company_name = 10;
     repeated string attributes_array = 11;
-    int32 __v = 11;
+    int32 __v = 12;
 }
 
 message ItemResponse {
