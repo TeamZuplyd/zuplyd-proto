@@ -16,7 +16,7 @@ message Item {
     string category_name = 2;
     string brand_name = 3;
     int32 min_release_quantity = 4;
-    string min_release_quantity = 5;
+    string min_release_quantity_unit = 5;
     string output_rule = 6;
     string output_rule_unit = 7;
     string company_id = 8;
@@ -30,7 +30,7 @@ message ItemWithID {
     string category_name = 3;
     string brand_name = 4;
     int32 min_release_quantity = 5;
-    string min_release_quantity = 6;
+    string min_release_quantity_unit = 6;
     string output_rule = 7;
     string output_rule_unit = 8;
     string company_id = 9;
