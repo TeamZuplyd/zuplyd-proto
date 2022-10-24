@@ -18,6 +18,7 @@ message RegisterRequest {
     string role = 2;
     string company_name = 3;
     string company_id = 4;
+    string managing_id = 5;
 }
 
 message RegisterResponse {
@@ -41,7 +42,8 @@ message User {
     string role = 3;
     string company_name = 4;
     string company_id = 5;
-    int32 __v = 6;
+    string managing_id = 6;
+    int32 __v = 7;
 }
 
 message UserList {
