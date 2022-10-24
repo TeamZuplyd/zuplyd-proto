@@ -12,7 +12,7 @@ service ItemService {
 
 service ItemCategoryService {
     rpc createCategory (ItemCategory) returns (ItemCategoryWithID) {}
-    rpc findByCompanyID (companyIDReq) returns (ItemCategoryWithID) {}
+    rpc findByCompanyID (companyIDReq) returns (findByCompanyIDRes) {}
 }
 
 /* Item */
@@ -69,6 +69,13 @@ message FindAllResponse {
 message ItemCategory{
   string company_id = 1;
   repeated string categoryArr = 2;
+}
+
+message findByCompanyIDRes {
+    oneof res {
+        ItemCategoryWithID itemCategory = 1;
+        string error = 2;
+    }
 }
 
 message ItemCategoryWithID{
