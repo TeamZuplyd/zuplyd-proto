@@ -37,13 +37,18 @@ message FindByUsernameResponse {
 
 /* Find All */
 message AllUsersRequest{
-    optional UserByCompRole userByCompRole = 1;
+    oneof res{
+        UserByCompRole userByCompRole = 1;
+        EmptyMsg msg = 2;
+    }
 }
 
 message UserByCompRole{
     string company_id = 1;
     string role = 2;
 }
+
+message EmptyMsg{}
 
 
 message User {
