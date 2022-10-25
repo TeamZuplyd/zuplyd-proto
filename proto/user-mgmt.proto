@@ -6,7 +6,7 @@ import "google/protobuf/empty.proto";
 
 service UserMgmtService {
     rpc Register (RegisterRequest) returns (RegisterResponse) {}
-    rpc findAll (AllUsersRequest) returns (UserList) {}
+    rpc findAll (UserByCompRole) returns (UserList) {}
     rpc findByUsername (UserRequest) returns (RegisterResponse) {}
     rpc delete (UserRequest) returns (RegisterResponse) {}
     rpc update (User) returns (RegisterResponse) {}
