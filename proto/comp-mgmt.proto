@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package compMgmt;
+
+import "google/protobuf/empty.proto";
+
+service UserMgmtService {
+    rpc register (RegisterRequest) returns (RegisterResponse) {}
+    // rpc findAll (google.protobuf.Empty) returns (UserList) {}
+    // rpc findByUsername (UserRequest) returns (RegisterResponse) {}
+    // rpc delete (UserRequest) returns (RegisterResponse) {}
+    // rpc update (User) returns (RegisterResponse) {}
+}
+
+/* Register */
+message RegisterRequest {
+    string step = 1;
+    string comp_id = 2;
+    string comp_data = 3;
+}
+
+// message RegisterResponse {
+//     oneof regRes {
+//         User user = 1;
+//         string error = 2;
+//     }
+// }
+
+// message FindByUsernameResponse {
+//     oneof res {
+//         User user = 1;
+//         string error = 2;
+//     }
+// } 
+
+// /* Find All */
+// message User {
+//     string _id = 1;
+//     string email = 2;
+//     string role = 3;
+//     string company_name = 4;
+//     string company_id = 5;
+//     int32 __v = 6;
+// }
+
+// message UserList {
+//     repeated User users = 1;
+// }
+
+// message UserRequest {
+//     string email = 1;
+// }

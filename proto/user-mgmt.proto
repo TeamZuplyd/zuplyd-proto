@@ -6,7 +6,8 @@ import "google/protobuf/empty.proto";
 
 service UserMgmtService {
     rpc Register (RegisterRequest) returns (RegisterResponse) {}
-    rpc findAll (google.protobuf.Empty) returns (UserList) {}
+    rpc findAllByComp (UserByComp) returns (UserList) {}
+    rpc findAllByCompRole (UserByCompRole) returns (UserList) {}
     rpc findByUsername (UserRequest) returns (RegisterResponse) {}
     rpc delete (UserRequest) returns (RegisterResponse) {}
     rpc update (User) returns (RegisterResponse) {}
@@ -36,6 +37,15 @@ message FindByUsernameResponse {
 } 
 
 /* Find All */
+message UserByComp{
+    string company_id = 1;
+}
+
+message UserByCompRole{
+    string company_id = 1;
+    string role = 2;
+}
+
 message User {
     string _id = 1;
     string email = 2;
