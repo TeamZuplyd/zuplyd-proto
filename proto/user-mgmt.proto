@@ -41,7 +41,7 @@ message AllUsersRequest{
 }
 
 message UserByCompRole{
-    string company_name = 1;
+    string company_id = 1;
     string role = 2;
 }
 
