@@ -10,10 +10,7 @@ service ItemService {
     rpc delete (ItemIDRequest) returns (ItemResponse) {}
 }
 
-service ItemCategoryService {
-    rpc createCategory (ItemCategory) returns (ItemCategoryWithID) {}
-    rpc findByCompanyID (companyIDReq) returns (findByCompanyIDRes) {}
-}
+
 
 /* Item */
 message Item {
@@ -66,9 +63,14 @@ message FindAllResponse {
 
 /* Item Category Service*/
 
+service ItemCategoryService {
+    rpc createCategory (ItemCategory) returns (ItemCategoryWithID) {}
+    rpc findByCompanyID (companyIDReq) returns (findByCompanyIDRes) {}
+}
+
 message ItemCategory{
   string company_id = 1;
-  repeated string categoryArr = 2;
+  string categoryArr = 2;
 }
 
 message findByCompanyIDRes {
