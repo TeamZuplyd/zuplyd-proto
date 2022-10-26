@@ -10,8 +10,6 @@ service ItemService {
     rpc delete (ItemIDRequest) returns (ItemResponse) {}
 }
 
-import "google/protobuf/any.proto";
-
 
 /* Item */
 message Item {
@@ -26,9 +24,14 @@ message Item {
     string output_rule_type = 9;
     string company_id = 10;
     string company_name = 11;
-    repeated google.protobuf.Any suppliers = 12;
+    repeated Supplier suppliers = 12;
     string batch_no = 13;
     repeated string attributes_array = 14;
+}
+
+message Supplier {
+    string supplierName = 1;
+    string id = 2;
 }
 
 message ItemWithID {
@@ -44,7 +47,7 @@ message ItemWithID {
     string output_rule_type = 10;
     string company_id = 11;
     string company_name = 12;
-    repeated google.protobuf.Any suppliers = 13;
+    repeated Supplier suppliers = 13;
     string batch_no = 14;
     repeated string attributes_array = 15;
     int32 __v = 16;
