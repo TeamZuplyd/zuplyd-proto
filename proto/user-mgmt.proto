@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package userMgmt;
 
-import "google/protobuf/empty.proto";
-
 service UserMgmtService {
     rpc Register (RegisterRequest) returns (RegisterResponse) {}
     rpc findAllByComp (UserByComp) returns (UserList) {}
@@ -17,9 +15,10 @@ service UserMgmtService {
 message RegisterRequest {
     string email = 1;
     string role = 2;
-    string company_name = 3;
-    string company_id = 4;
-    string managing_id = 5;
+    string name = 3;
+    string company_name = 4;
+    string company_id = 5;
+    string managing_id = 6;
 }
 
 message RegisterResponse {
@@ -49,11 +48,12 @@ message UserByCompRole{
 message User {
     string _id = 1;
     string email = 2;
-    string role = 3;
-    string company_name = 4;
-    string company_id = 5;
-    string managing_id = 6;
-    int32 __v = 7;
+    string name = 3;
+    string role = 4;
+    string company_name = 5;
+    string company_id = 6;
+    string managing_id = 7;
+    int32 __v = 8;
 }
 
 message UserList {
